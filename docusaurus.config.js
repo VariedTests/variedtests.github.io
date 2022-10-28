@@ -1,205 +1,416 @@
-// @ts-nocheck
-// Note: type annotations allow type checking and IDEs autocompletion
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
-const lightCodeTheme = require('@kiwicopple/prism-react-renderer/themes/vsDark')
-const darkCodeTheme = require('@kiwicopple/prism-react-renderer/themes/vsDark')
-const mainNavbar = require('./nav/_referenceNavbar')
+const users = require('./showcase.json');
+const versions = require('./versions.json');
 
-const baseUrl = '/'
+const lastVersion = versions[0];
+const copyright = `Copyright © ${new Date().getFullYear()} Meta Platforms, Inc.`;
 
-/** @type {import('@docusaurus/types').Config} */
-const config = {
-  title: 'Docs',
-  tagline: 'The open source Firebase alternative.',
+const commonDocsOptions = {
+  breadcrumbs: false,
+  showLastUpdateAuthor: false,
+  showLastUpdateTime: true,
+  editUrl:
+    'https://github.com/facebook/react-native-website/blob/master/website/',
+  remarkPlugins: [require('@react-native-website/remark-snackplayer')],
+};
+
+/** @type {import('@docusaurus/types').DocusaurusConfig} */
+module.exports = {
+  title: 'React Native',
+  tagline: 'A framework for building native apps using React',
+  organizationName: 'VariedTests',
+  projectName: 'variedtest.github.io',
   url: 'https://variedtests.github.io',
-  baseUrl: baseUrl,
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: '/favicon.ico',
-  themes: ['docusaurus-theme-search-typesense'],
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'VariedTests', // Usually your GitHub org/user name.
-  projectName: 'docs', // Usually your repo name.
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
+  baseUrl: '/',
+  clientModules: [require.resolve('./snackPlayerInitializer.js')],
+  trailingSlash: false, // because trailing slashes can break some existing relative links
+  scripts: [
+    {
+      src: 'https://cdn.jsdelivr.net/npm/focus-visible@5.2.0/dist/focus-visible.min.js',
+      defer: true,
+    },
+    {
+      src: 'https://widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd8ryO5qrZo8Exadq9qmt1wtm4_2FdZGEAKHDFEt_2BBlwwM4.js',
+      defer: true,
+    },
+    {src: 'https://snack.expo.dev/embed.js', defer: true},
+  ],
+  favicon: 'img/favicon.ico',
+  titleDelimiter: '·',
+  customFields: {
+    users,
+    facebookAppId: '1677033832619985',
+  },
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
-  plugins: ['docusaurus-plugin-sass'],
-
+  onBrokenLinks: 'throw',
+  webpack: {
+    jsLoader: isServer => ({
+      loader: require.resolve('esbuild-loader'),
+      options: {
+        loader: 'tsx',
+        format: isServer ? 'cjs' : undefined,
+        target: isServer ? 'node12' : 'es2017',
+      },
+    }),
+  },
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: '/', // Serve the docs at the site's root
-          sidebarPath: require.resolve('./nav/_referenceSidebars.js'),
-          breadcrumbs: false,
-          editUrl:
-            'https://github.com/supabase/supabase/edit/master/apps/reference',
+          path: '../docs',
+          sidebarPath: require.resolve('./sidebars.json'),
+          editCurrentVersion: true,
+          onlyIncludeVersions:
+            process.env.PREVIEW_DEPLOY === 'true'
+              ? ['current', ...versions.slice(0, 2)]
+              : undefined,
+          versions: {
+            [lastVersion]: {
+              badge: false, // Do not show version badge for last RN version
+            },
+          },
+          ...commonDocsOptions,
         },
-        blog: false,
+        blog: {
+          path: 'blog',
+          blogSidebarCount: 'ALL',
+          blogSidebarTitle: 'All Blog Posts',
+          feedOptions: {
+            type: 'all',
+            copyright,
+          },
+        },
         theme: {
-          customCss: require.resolve('./src/css/custom.scss'),
+          customCss: [
+            require.resolve('./src/css/customTheme.scss'),
+            require.resolve('./src/css/index.scss'),
+            require.resolve('./src/css/showcase.scss'),
+            require.resolve('./src/css/versions.scss'),
+          ],
+        },
+        googleAnalytics: {
+          trackingID: 'UA-41298772-2',
+        },
+        gtag: {
+          trackingID: 'UA-41298772-2',
         },
       }),
     ],
   ],
-
+  plugins: [
+    'docusaurus-plugin-sass',
+    [
+      'content-docs',
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: 'architecture',
+        path: 'architecture',
+        routeBasePath: '/architecture',
+        sidebarPath: require.resolve('./sidebarsArchitecture.json'),
+        ...commonDocsOptions,
+      }),
+    ],
+    [
+      'content-docs',
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: 'contributing',
+        path: 'contributing',
+        routeBasePath: '/contributing',
+        sidebarPath: require.resolve('./sidebarsContributing.json'),
+        ...commonDocsOptions,
+      }),
+    ],
+    [
+      'content-docs',
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: 'community',
+        path: 'community',
+        routeBasePath: '/community',
+        sidebarPath: require.resolve('./sidebarsCommunity.json'),
+        ...commonDocsOptions,
+      }),
+    ],
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        offlineModeActivationStrategies: ['appInstalled', 'queryString'],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/pwa/manifest-icon-512.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json',
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: '#20232a',
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-capable',
+            content: 'yes',
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-status-bar-style',
+            content: '#20232a',
+          },
+          {
+            tagName: 'link',
+            rel: 'apple-touch-icon',
+            href: '/img/pwa/manifest-icon-512.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'mask-icon',
+            href: '/img/pwa/manifest-icon-512.png',
+            color: '#06bcee',
+          },
+          {
+            tagName: 'meta',
+            name: 'msapplication-TileImage',
+            href: '/img/pwa/manifest-icon-512.png',
+          },
+          {
+            tagName: 'meta',
+            name: 'msapplication-TileColor',
+            content: '#20232a',
+          },
+        ],
+      },
+    ],
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      docs: {
-        sidebar: {
-          autoCollapseCategories: true,
-        },
+      announcementBar: {
+        id: 'support_ukraine',
+        content:
+          'Support Ukraine 🇺🇦 <a target="_blank" rel="noopener noreferrer" href="https://opensource.facebook.com/support-ukraine"> Help Provide Humanitarian Aid to Ukraine</a>.',
+        backgroundColor: '#20232a',
+        textColor: '#fff',
+        isCloseable: false,
+      },
+      prism: {
+        defaultLanguage: 'jsx',
+        theme: require('./core/PrismTheme'),
+        additionalLanguages: [
+          'java',
+          'kotlin',
+          'objectivec',
+          'swift',
+          'groovy',
+          'ruby',
+          'flow',
+        ],
       },
       navbar: {
-        // title: 'Supabase Docs',
+        title: 'React Native',
         logo: {
-          alt: 'Supabase Docs',
-          href: 'https://supabase.com',
-          target: '_self',
-          src: '/img/supabase-logo-wordmark--light.svg',
-          srcDark: '/img/supabase-logo-wordmark--dark.svg',
+          src: 'img/header_logo.svg',
+          alt: 'React Native',
         },
-        items: mainNavbar.buildNavbar({ baseUrl }),
+        style: 'dark',
+        items: [
+          {
+            label: 'Development',
+            type: 'dropdown',
+            position: 'right',
+            items: [
+              {
+                label: 'Guides',
+                type: 'doc',
+                docId: 'getting-started',
+              },
+              {
+                label: 'Components',
+                type: 'doc',
+                docId: 'components-and-apis',
+              },
+              {
+                label: 'APIs',
+                type: 'doc',
+                docId: 'accessibilityinfo',
+              },
+              {
+                label: 'Architecture',
+                type: 'doc',
+                docId: 'architecture-overview',
+                docsPluginId: 'architecture',
+              },
+            ],
+          },
+          {
+            type: 'doc',
+            docId: 'overview',
+            label: 'Contributing',
+            position: 'right',
+            docsPluginId: 'contributing',
+          },
+          {
+            type: 'doc',
+            docId: 'overview',
+            label: 'Community',
+            position: 'right',
+            docsPluginId: 'community',
+          },
+          {
+            to: '/showcase',
+            label: 'Showcase',
+            position: 'right',
+          },
+          {
+            to: '/blog',
+            label: 'Blog',
+            position: 'right',
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'left',
+            dropdownActiveClassDisabled: true,
+            dropdownItemsAfter: [
+              {
+                to: '/versions',
+                label: 'All versions',
+              },
+            ],
+          },
+          {
+            href: 'https://github.com/facebook/react-native',
+            'aria-label': 'GitHub repository',
+            position: 'right',
+            className: 'navbar-github-link',
+          },
+        ],
       },
+      image: 'img/logo-og.png',
       footer: {
+        style: 'dark',
         links: [
           {
-            title: 'Company',
+            title: 'Develop',
             items: [
               {
-                label: 'Blog',
-                to: 'https://supabase.com/blog',
+                label: 'Guides',
+                to: 'docs/getting-started',
               },
               {
-                label: 'Open source',
-                to: '/oss',
+                label: 'Components',
+                to: 'docs/components-and-apis',
               },
               {
-                label: 'Terms of Service',
-                to: '/docs/company/terms',
+                label: 'APIs',
+                to: 'docs/accessibilityinfo',
               },
               {
-                label: 'Privacy Policy',
-                to: '/docs/company/privacy',
-              },
-              {
-                label: 'Acceptable Use Policy',
-                to: '/docs/company/aup',
-              },
-              {
-                label: 'Service Level Agreement',
-                to: '/docs/company/sla',
-              },
-              {
-                label: 'Humans.txt',
-                to: 'https://supabase.com/humans.txt',
-              },
-              {
-                label: 'Lawyers.txt',
-                to: 'https://supabase.com/lawyers.txt',
+                label: 'Architecture',
+                to: 'architecture/overview',
               },
             ],
           },
           {
-            title: 'Resources',
+            title: 'Participate',
             items: [
               {
-                label: 'Brand Assets',
-                to: 'https://supabase.com/brand-assets',
-              },
-              {
-                label: 'Docs',
-                to: 'https://supabase.com/docs',
-              },
-              {
-                label: 'Pricing',
-                to: 'https://supabase.com/pricing',
-              },
-              {
-                label: 'Support',
-                to: '/support',
-              },
-              {
-                label: 'System Status',
-                to: 'https://status.supabase.com/',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'SupaSquad',
-                href: 'https://supabase.com/docs/handbook/supasquad',
+                label: 'Showcase',
+                to: 'showcase',
               },
               {
                 label: 'Contributing',
-                href: 'https://supabase.com/docs/handbook/contributing',
+                to: 'contributing/overview',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/supabase/supabase',
+                label: 'Community',
+                to: 'community/overview',
+              },
+              {
+                label: 'Directory',
+                href: 'https://reactnative.directory/',
+              },
+              {
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/questions/tagged/react-native',
+              },
+            ],
+          },
+          {
+            title: 'Find us',
+            items: [
+              {
+                label: 'Blog',
+                to: 'blog',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/supabase',
+                href: 'https://twitter.com/reactnative',
               },
               {
-                label: 'DevTo',
-                href: 'https://dev.to/supabase',
+                label: 'GitHub',
+                href: 'https://github.com/facebook/react-native',
+              },
+            ],
+          },
+          {
+            title: 'Explore More',
+            items: [
+              {
+                label: 'ReactJS',
+                href: 'https://reactjs.org/',
               },
               {
-                label: 'RSS',
-                href: 'https://supabase.com/rss.xml',
+                label: 'Privacy Policy',
+                href: 'https://opensource.fb.com/legal/privacy/',
               },
               {
-                label: 'Discord',
-                href: 'https://discord.supabase.com',
+                label: 'Terms of Service',
+                href: 'https://opensource.fb.com/legal/terms/',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Supabase.`,
-      },
-      prism: {
-        additionalLanguages: ['dart'],
-        plugins: ['line-numbers', 'show-language'],
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-      },
-
-      typesense: {
-        typesenseCollectionName: 'supabase', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
-
-        typesenseServerConfig: {
-          nodes: [
-            {
-              host: 'doc-search.supabase.com',
-              port: 443,
-              protocol: 'https',
-            },
-          ],
-          apiKey: 't0HAJQy4KtcMk3aYGnm8ONqab2oAysJz',
+        logo: {
+          alt: 'Meta Open Source Logo',
+          src: 'img/oss_logo.svg',
+          href: 'https://opensource.fb.com/',
         },
-
-        // Optional: Typesense search parameters: https://typesense.org/docs/0.21.0/api/documents.md#search-parameters
-        typesenseSearchParameters: {},
-
-        // Optional
+        copyright,
+      },
+      algolia: {
+        appId: '8TDSE0OHGQ',
+        apiKey: '83cd239c72f9f8b0ed270a04b1185288',
+        indexName: 'react-native-v2',
         contextualSearch: true,
       },
+      metadata: [
+        {
+          property: 'og:image',
+          content: 'https://reactnative.dev/img/logo-og.png',
+        },
+        {name: 'twitter:card', content: 'summary_large_image'},
+        {
+          name: 'twitter:image',
+          content: 'https://reactnative.dev/img/logo-og.png',
+        },
+        {name: 'twitter:site', content: '@reactnative'},
+      ],
     }),
-  scripts: [{ src: '/docs/scripts/telemetry.js' }],
-}
-
-module.exports = config
+};
