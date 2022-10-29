@@ -46,9 +46,9 @@ jobs:
           DEPLOYMENT_BRANCH: gh-pages
           CONTEXT: production
         run: |
+          cd website
           git config --global user.email "danielmonetelli@hotmail.com"
           git config --global user.name "danielmonettelli"
-          cd website
           if [ -e yarn.lock ]; then
             yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
