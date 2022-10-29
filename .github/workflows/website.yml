@@ -19,7 +19,6 @@ jobs:
           node-version: '16.x'
       - name: Test Build
         run: |
-          cd website
           if [ -e yarn.lock ]; then
             yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
@@ -46,7 +45,6 @@ jobs:
           DEPLOYMENT_BRANCH: gh-pages
           CONTEXT: production
         run: |
-          cd website
           git config --global user.email "danielmonetelli@hotmail.com"
           git config --global user.name "danielmonettelli"
           if [ -e yarn.lock ]; then
