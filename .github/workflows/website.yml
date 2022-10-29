@@ -8,6 +8,10 @@ on:
     branches: 
       - main
 
+defaults:
+  run:
+    working-directory: website
+
 jobs:
   pr-checks:
     if: github.event_name == 'pull_request'
@@ -19,7 +23,6 @@ jobs:
           node-version: '16.x'
       - name: Test Build
         run: |
-        working-directory: ~/variedtests.github.io/website
           if [ -e yarn.lock ]; then
             yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
@@ -46,7 +49,6 @@ jobs:
           DEPLOYMENT_BRANCH: gh-pages
           CONTEXT: production
         run: |
-        working-directory: ~/variedtests.github.io/website
           git config --global user.email "danielmonetelli@hotmail.com"
           git config --global user.name "danielmonettelli"
           if [ -e yarn.lock ]; then
