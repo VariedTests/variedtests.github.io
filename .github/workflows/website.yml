@@ -46,6 +46,7 @@ jobs:
         run: |
           git config --global user.email "danielmonetelli@hotmail.com"
           git config --global user.name "danielmonettelli"
+          yarn add docusaurus-plugin-sass sass
           if [ -e yarn.lock ]; then
             yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
