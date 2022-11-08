@@ -32,7 +32,7 @@ const BlogListItem = ({ post }: Props) => {
                 className={`border-scale-300 relative mb-4 h-60 w-full overflow-auto rounded-lg border shadow-sm`}
               >
                 <Image
-                  // layout='fill'
+                  layout='fill'
                   src={
                     !post.thumb
                       ? `/images/blog/blog-placeholder.png`
