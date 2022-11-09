@@ -137,7 +137,7 @@ const config = {
               },
               {
                 label: 'Service Level Agreement',
-                to: '/docs/company/sla',
+                to: '/blog',
               },
               {
                 label: 'Humans.txt',
