@@ -106,22 +106,6 @@ const config = {
               "href": "https://twitter.com/supabase",
               "className": "navbar-item-twitter",
               "position": "right"
-            },
-            {
-              "type": "docsVersionDropdown",
-              "position": "left",
-              "docsPluginId": "_supabase_dart",
-              "supabaseCustomNavBarRegex": "(^/docs/reference/dart$|docs/reference/dart/)",
-              "dropdownItemsBefore": [],
-              "dropdownItemsAfter": []
-            },
-            {
-              "type": "docsVersionDropdown",
-              "position": "left",
-              "docsPluginId": "_supabase_js",
-              "supabaseCustomNavBarRegex": "(^/docs/reference/javascript$|docs/reference/javascript/)",
-              "dropdownItemsBefore": [],
-              "dropdownItemsAfter": []
             }
           ],
           "hideOnScroll": false
@@ -137,19 +121,19 @@ const config = {
               },
               {
                 label: 'Open source',
-                to: '/oss',
+                to: '/blog',
               },
               {
                 label: 'Terms of Service',
-                to: '/docs/company/terms',
+                to: '/blog',
               },
               {
                 label: 'Privacy Policy',
-                to: '/docs/company/privacy',
+                to: '/blog',
               },
               {
                 label: 'Acceptable Use Policy',
-                to: '/docs/company/aup',
+                to: '/blog',
               },
               {
                 label: 'Service Level Agreement',
@@ -182,7 +166,7 @@ const config = {
               },
               {
                 label: 'Support',
-                to: '/support',
+                to: '/blog',
               },
               {
                 label: 'System Status',
@@ -224,7 +208,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Supabase.`,
+        copyright: `Copyright © ${new Date().getFullYear()} .NET MAUI Community Guide.`,
       },
       prism: {
         additionalLanguages: ['dart'],
