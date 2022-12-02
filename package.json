@@ -1,58 +1,60 @@
 {
-  "name": "maui-community-guide",
+  "name": "supabase",
+  "description": "The open source Firebase alternative.",
   "version": "0.0.0",
+  "author": "Supabase, Inc.",
+  "license": "Apache-2.0",
   "private": true,
+  "workspaces": [
+    "apps/www",
+    "packages/*"
+  ],
   "scripts": {
-    "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
-    "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
-    "clear": "docusaurus clear",
-    "serve": "docusaurus serve",
-    "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
-  },
-  "dependencies": {
-    "@docusaurus/core": "2.1.0",
-    "@docusaurus/preset-classic": "2.1.0",
-    "@kiwicopple/prism-react-renderer": "github:kiwicopple/prism-react-renderer",
-    "@mdx-js/react": "^1.6.22",
-    "clsx": "^1.2.1",
-    "docusaurus-plugin-sass": "^0.2.2",
-    "docusaurus-theme-search-typesense": "^0.6.0-0 ",
-    "jsrsasign": "^10.5.26",
-    "octokit": "^2.0.5",
-    "prism-react-renderer": "^1.3.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "sass": "^1.56.0"
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "dev:reference": "turbo run dev --filter=reference --parallel",
+    "dev:studio": "turbo run dev --filter=studio --parallel",
+    "dev:docs": "turbo run dev --filter=docs --parallel",
+    "dev:www": "turbo run dev --filter=www --parallel",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"apps/**/*.{js,jsx,ts,tsx,css,md,json}\"",
+    "docker:dev": "cd docker && docker-compose -f docker-compose.yml -f ./dev/docker-compose.dev.yml up --renew-anon-volumes",
+    "docker:up": "cd docker && docker-compose up",
+    "docker:down": "cd docker && docker-compose -f docker-compose.yml -f ./dev/docker-compose.dev.yml down --remove-orphans",
+    "docker:remove": "cd docker && docker-compose -f docker-compose.yml -f ./dev/docker-compose.dev.yml rm -vfs",
+    "test": "jest",
+    "test:studio": "turbo run test --filter=studio",
+    "perf:kong": "ab -t 5 -c 20 -T application/json http://localhost:8000/",
+    "perf:meta": "ab -t 5 -c 20 -T application/json http://localhost:5555/tables"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.1.0",
-    "@tsconfig/docusaurus": "^1.0.6",
-    "ejs": "^3.1.8",
-    "lodash": "^4.17.21",
-    "minimist": "^1.2.6",
-    "npm-run-all": "^4.1.5",
-    "openapi-types": "^12.0.2",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.8.4"
+    "@types/json-stringify-safe": "^5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "*",
+    "json-stringify-safe": "^5.0.1",
+    "prettier": "^2.5.1",
+    "turbo": "1.4.7"
   },
-  "browserslist": {
-    "production": [
-      ">0.5%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supabase/supabase.git"
   },
   "engines": {
-    "node": ">=16.14"
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "keywords": [
+    "postgres",
+    "firebase",
+    "storage",
+    "functions",
+    "database",
+    "auth"
+  ],
+  "dependencies": {
+    "@mdx-js/react": "^2.1.1",
+    "mdx-mermaid": "^1.3.2",
+    "mermaid": "^9.2.2",
+    "mini-svg-data-uri": "^1.4.4"
   }
 }
