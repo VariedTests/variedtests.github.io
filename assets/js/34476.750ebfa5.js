@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[34476],{34476:e=>{e.exports=JSON.parse('{"filePath":"/home/runner/work/variedtests.github.io/variedtests.github.io/packages/ui-tests/src/index.tsx","description":"","displayName":"layoutHeaderTests","props":{},"generatedAt":1671230508123}')}}]);

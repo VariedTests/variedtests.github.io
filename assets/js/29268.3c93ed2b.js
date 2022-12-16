@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[29268],{29268:e=>{e.exports=JSON.parse('{"filePath":"/home/runner/work/variedtests.github.io/variedtests.github.io/packages/antd/src/index.tsx","description":"","displayName":"mapAntdSorterToCrudSorting","props":{},"generatedAt":1671230497087}')}}]);

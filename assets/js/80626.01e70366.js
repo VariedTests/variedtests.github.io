@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[80626],{80626:e=>{e.exports=JSON.parse('{"filePath":"/home/runner/work/variedtests.github.io/variedtests.github.io/packages/mantine/src/index.tsx","description":"","displayName":"useSelect","props":{},"generatedAt":1671230502689}')}}]);
