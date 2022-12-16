@@ -8,44 +8,50 @@ on:
     branches: 
       - main
 
-# defaults:
-#   run:
-#     working-directory: ./apps/www
-
 jobs:
-  build:
+  pr-checks:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2.5.0
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v3.5.1
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v3.5.1
         with:
-          node-version: 16
-
-      - name: Installing my packages
-        run: npm ci
-
-      - name: Cache Nextjs
-        uses: actions/cache@v3
+          node-version: '16.x'
+      - name: Test Build
+        run: |
+          if [ -e yarn.lock ]; then
+            yarn install --frozen-lockfile
+          elif [ -e package-lock.json ]; then
+            npm ci
+          else
+            npm i
+          fi
+          npm run build
+  gh-release:
+    # if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v3.5.1
         with:
-          # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
-          path: |
-            ~/.npm
-            ${{ github.workspace }}/.next/cache
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-
-      - name: Build my App
-        run: npm run build && npm run export && touch ./out/.nojekyll
-
-      - name: Release to GitHub Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+          node-version: '16.x'
+      - uses: webfactory/ssh-agent@v0.7.0
         with:
-          ssh-key: ${{ secrets.GH_PAGES_DEPLOY }}
-          branch: gh-pages # The branch the action should deploy to.
-          folder: out # The folder the action should deploy.
+          ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
+      - name: Release to GitHub Pages
+        env:
+          USE_SSH: true
+          GIT_USER: git
+          DEPLOYMENT_BRANCH: gh-pages
+        run: |
+          git config --global user.email "danielmonetelli@hotmail.com"
+          git config --global user.name "danielmonettelli"
+          yarn add docusaurus-plugin-sass sass
+          if [ -e yarn.lock ]; then
+            yarn install --frozen-lockfile
+          elif [ -e package-lock.json ]; then
+            npm ci
+          else
+            npm i
+          fi
+          npm run deploy
