@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[32405],{75829:e=>{e.exports=JSON.parse('{"label":"netlify","permalink":"/blog/tags/netlify","allTagsPath":"/blog/tags","count":1}')}}]);

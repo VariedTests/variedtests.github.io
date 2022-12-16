@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[32029],{53419:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/material-ui/page/2","page":2,"postsPerPage":12,"totalPages":2,"totalCount":13,"previousPage":"/blog/tags/material-ui","blogDescription":"A Docusaurus powered blog!","blogTitle":"Blog"}')}}]);

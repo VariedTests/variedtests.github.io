@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[38889],{51295:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/admin-panel","page":1,"postsPerPage":12,"totalPages":1,"totalCount":7,"blogDescription":"A Docusaurus powered blog!","blogTitle":"Blog"}')}}]);

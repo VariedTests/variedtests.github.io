@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[71894],{91911:t=>{t.exports=JSON.parse('{"label":"mui-button","permalink":"/blog/tags/mui-button","allTagsPath":"/blog/tags","count":1}')}}]);

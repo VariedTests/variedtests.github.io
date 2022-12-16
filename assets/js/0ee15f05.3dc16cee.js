@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[97380],{28952:a=>{a.exports=JSON.parse('{"label":"schema-validation","permalink":"/blog/tags/schema-validation","allTagsPath":"/blog/tags","count":1}')}}]);

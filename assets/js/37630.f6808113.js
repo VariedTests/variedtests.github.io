@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[37630],{37630:e=>{e.exports=JSON.parse('{"filePath":"/home/runner/work/variedtests.github.io/variedtests.github.io/packages/medusa/src/index.ts","description":"","displayName":"authProvider","props":{},"generatedAt":1671164287458}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[31895],{28253:t=>{t.exports=JSON.parse('{"label":"typescript-partial","permalink":"/blog/tags/typescript-partial","allTagsPath":"/blog/tags","count":1}')}}]);

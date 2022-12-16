@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[60357],{42388:a=>{a.exports=JSON.parse('{"label":"crud-app","permalink":"/blog/tags/crud-app","allTagsPath":"/blog/tags","count":1}')}}]);

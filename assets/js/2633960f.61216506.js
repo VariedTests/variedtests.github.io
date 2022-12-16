@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[46862],{21798:e=>{e.exports=JSON.parse('{"label":"getServerSideProps","permalink":"/blog/tags/get-server-side-props","allTagsPath":"/blog/tags","count":1}')}}]);

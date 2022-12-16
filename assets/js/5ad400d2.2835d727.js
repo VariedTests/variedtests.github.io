@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[90014],{72989:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/strapi","page":1,"postsPerPage":12,"totalPages":1,"totalCount":6,"blogDescription":"A Docusaurus powered blog!","blogTitle":"Blog"}')}}]);

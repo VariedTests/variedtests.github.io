@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[87006],{8286:t=>{t.exports=JSON.parse('{"label":"typescript-pick","permalink":"/blog/tags/typescript-pick","allTagsPath":"/blog/tags","count":1}')}}]);
