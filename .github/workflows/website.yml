@@ -8,6 +8,10 @@ on:
     branches: 
       - main
 
+defaults:
+  run:
+    working-directory: ./documentation
+
 jobs:
   pr-checks:
     if: github.event_name == 'pull_request'
