@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[75943],{75943:e=>{e.exports=JSON.parse('{"filePath":"/home/runner/work/variedtests.github.io/variedtests.github.io/packages/mantine/src/index.tsx","description":"","displayName":"mapButtonVariantToActionIconVariant","props":{},"generatedAt":1671230502689}')}}]);

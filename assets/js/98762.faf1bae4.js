@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[98762],{98762:e=>{e.exports=JSON.parse('{"filePath":"/home/runner/work/variedtests.github.io/variedtests.github.io/packages/hasura/src/index.ts","description":"","displayName":"liveProvider","props":{},"generatedAt":1671230501254}')}}]);

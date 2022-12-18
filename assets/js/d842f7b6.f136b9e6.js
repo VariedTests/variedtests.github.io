@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[42406],{95093:e=>{e.exports=JSON.parse('{"label":"neumorphism","permalink":"/blog/tags/neumorphism","allTagsPath":"/blog/tags","count":1}')}}]);

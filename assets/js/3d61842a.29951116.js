@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[26390],{97990:a=>{a.exports=JSON.parse('{"label":"usecallback","permalink":"/blog/tags/usecallback","allTagsPath":"/blog/tags","count":1}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[55867],{55867:e=>{e.exports=JSON.parse('{"filePath":"/home/runner/work/variedtests.github.io/variedtests.github.io/packages/mui/src/index.tsx","description":"","displayName":"useDataGrid","props":{},"generatedAt":1671331210593}')}}]);

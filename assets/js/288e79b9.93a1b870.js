@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[64870],{16:a=>{a.exports=JSON.parse('{"label":"react-lazy-loading","permalink":"/blog/tags/react-lazy-loading","allTagsPath":"/blog/tags","count":1}')}}]);

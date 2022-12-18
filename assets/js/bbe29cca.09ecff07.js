@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[46281],{78594:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/business-tool","page":1,"postsPerPage":12,"totalPages":1,"totalCount":3,"blogDescription":"A Docusaurus powered blog!","blogTitle":"Blog"}')}}]);

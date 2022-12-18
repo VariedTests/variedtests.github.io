@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[23041],{4377:e=>{e.exports=JSON.parse('{"label":"react-performance","permalink":"/blog/tags/react-performance","allTagsPath":"/blog/tags","count":1}')}}]);

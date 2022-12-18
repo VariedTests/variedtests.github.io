@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[29490],{92273:a=>{a.exports=JSON.parse('{"label":"antd","permalink":"/blog/tags/antd","allTagsPath":"/blog/tags","count":3}')}}]);

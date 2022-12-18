@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[3212],{30068:a=>{a.exports=JSON.parse('{"label":"tailwind-grid","permalink":"/blog/tags/tailwind-grid","allTagsPath":"/blog/tags","count":1}')}}]);

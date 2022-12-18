@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[14079],{35091:e=>{e.exports=JSON.parse('{"label":"turborepo","permalink":"/blog/tags/turborepo","allTagsPath":"/blog/tags","count":1}')}}]);

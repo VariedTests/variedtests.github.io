@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[91549],{91549:e=>{e.exports=JSON.parse('{"filePath":"/home/runner/work/variedtests.github.io/variedtests.github.io/packages/supabase/src/index.ts","description":"","displayName":"dataProvider","props":{},"generatedAt":1671230507815}')}}]);

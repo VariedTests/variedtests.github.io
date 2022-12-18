@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[38392],{21008:o=>{o.exports=JSON.parse('{"permalink":"/blog/tags/mui-tooltip","page":1,"postsPerPage":12,"totalPages":1,"totalCount":2,"blogDescription":"A Docusaurus powered blog!","blogTitle":"Blog"}')}}]);

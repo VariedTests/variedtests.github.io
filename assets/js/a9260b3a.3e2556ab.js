@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[10760],{19105:e=>{e.exports=JSON.parse('{"label":"js-bundler","permalink":"/blog/tags/js-bundler","allTagsPath":"/blog/tags","count":1}')}}]);

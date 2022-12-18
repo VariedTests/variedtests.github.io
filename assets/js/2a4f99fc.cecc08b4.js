@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[644],{44323:e=>{e.exports=JSON.parse('{"label":"react-suspense","permalink":"/blog/tags/react-suspense","allTagsPath":"/blog/tags","count":1}')}}]);

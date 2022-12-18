@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[85218],{88836:e=>{e.exports=JSON.parse('{"label":"environment variables","permalink":"/blog/tags/environment-variables","allTagsPath":"/blog/tags","count":1}')}}]);

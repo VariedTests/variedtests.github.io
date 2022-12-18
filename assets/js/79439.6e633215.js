@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[79439],{79439:e=>{e.exports=JSON.parse('{"filePath":"/home/runner/work/variedtests.github.io/variedtests.github.io/packages/remix/src/routeComponent.tsx","description":"","displayName":"RemixRouteComponent","props":{},"generatedAt":1671230506080}')}}]);
