@@ -11,7 +11,7 @@ const redirectJson = require("./redirects.json");
 
 /** @type {import('@docusaurus/types/src/index').DocusaurusConfig} */
 const siteConfig = {
-    title: "refine",
+    title: ".NET MAUI Community Guide",
     tagline: "Build your React-based CRUD applications, without constraints",
     url: "https://variedtests.github.io",
     baseUrl: "/",
@@ -113,6 +113,7 @@ const siteConfig = {
     ],
     themeConfig: {
         prism: {
+            additionalLanguages: ['csharp'],
             magicComments: [
                 // Remember to extend the default highlight class name as well!
                 {
