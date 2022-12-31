@@ -8,9 +8,9 @@ on:
     branches: 
       - main
 
-# defaults:
-#   run:
-#     working-directory: ./docs
+defaults:
+  run:
+    working-directory: ./docs
 
 jobs:
   build:
@@ -24,8 +24,15 @@ jobs:
         with:
           node-version: '16.x'
 
-      - name: Installing my packages
-        run: npm ci
+      - name: Install dependencies
+        run: |
+          if [ -e yarn.lock ]; then
+          yarn install --frozen-lockfile
+          elif [ -e package-lock.json ]; then
+          npm ci
+          else
+          npm i
+          fi
 
       - name: Cache Nextjs
         uses: actions/cache@v3
