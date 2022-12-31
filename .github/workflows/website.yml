@@ -8,9 +8,9 @@ on:
     branches: 
       - main
 
-defaults:
-  run:
-    working-directory: ./docs
+# defaults:
+#   run:
+#     working-directory: ./docs
 
 jobs:
   build:
