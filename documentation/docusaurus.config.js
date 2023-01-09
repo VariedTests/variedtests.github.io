@@ -14,10 +14,10 @@ const redirectJson = require("./redirects.json");
 const siteConfig = {
     title: "refine",
     tagline: "Build your React-based CRUD applications, without constraints",
-    url: "https://refine.dev",
+    url: "https://variedtests.github.io",
     baseUrl: "/",
-    projectName: "refine",
-    organizationName: "refinedev",
+    projectName: "variedtests.github.io",
+    organizationName: "VariedTests",
     trailingSlash: true,
     favicon: "img/refine_favicon.png",
     scripts: ["https://platform.twitter.com/widgets.js"],
