@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[96177],{96177:e=>{e.exports=JSON.parse('{"filePath":"/home/runner/work/variedtests.github.io/variedtests.github.io/packages/graphql/src/index.ts","description":"","displayName":"__function","props":{},"generatedAt":1671331207570}')}}]);

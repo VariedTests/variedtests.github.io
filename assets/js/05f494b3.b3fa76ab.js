@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[12560],{10522:t=>{t.exports=JSON.parse('{"label":"github-authentication","permalink":"/blog/tags/github-authentication","allTagsPath":"/blog/tags","count":1}')}}]);

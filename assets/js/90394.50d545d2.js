@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[90394],{90394:e=>{e.exports=JSON.parse('{"filePath":"/home/runner/work/variedtests.github.io/variedtests.github.io/packages/core/src/index.tsx","description":"A hook that the UI uses","displayName":"useIsExistAuthentication","props":{},"generatedAt":1671331206542}')}}]);

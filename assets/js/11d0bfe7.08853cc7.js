@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[5814],{60872:a=>{a.exports=JSON.parse('{"label":"temporal-api","permalink":"/blog/tags/temporal-api","allTagsPath":"/blog/tags","count":1}')}}]);

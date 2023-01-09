@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[80901],{24751:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/react-performance","page":1,"postsPerPage":12,"totalPages":1,"totalCount":1,"blogDescription":"A Docusaurus powered blog!","blogTitle":"Blog"}')}}]);

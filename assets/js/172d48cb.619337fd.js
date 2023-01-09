@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[15594],{97669:a=>{a.exports=JSON.parse('{"label":"javascript-every","permalink":"/blog/tags/javascript-every","allTagsPath":"/blog/tags","count":1}')}}]);

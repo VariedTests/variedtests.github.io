@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[78618],{26455:t=>{t.exports=JSON.parse('{"label":"MonettelliUIKIT","permalink":"/blog/tags/monettelli-uikit","allTagsPath":"/blog/tags","count":1}')}}]);

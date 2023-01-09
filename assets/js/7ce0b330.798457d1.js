@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[65529],{45633:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/chakra-ui","page":1,"postsPerPage":12,"totalPages":1,"totalCount":1,"blogDescription":"A Docusaurus powered blog!","blogTitle":"Blog"}')}}]);

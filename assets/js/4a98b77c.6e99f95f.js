@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[13682],{6684:e=>{e.exports=JSON.parse('{"label":"react-ref","permalink":"/blog/tags/react-ref","allTagsPath":"/blog/tags","count":1}')}}]);

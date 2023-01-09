@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[64135],{64135:e=>{e.exports=JSON.parse('{"filePath":"/home/runner/work/variedtests.github.io/variedtests.github.io/packages/strapi-graphql/src/index.ts","description":"","displayName":"__function","props":{},"generatedAt":1673292591369}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[90406],{38098:e=>{e.exports=JSON.parse('{"name":"plugin-use-case-routes","id":"default"}')}}]);

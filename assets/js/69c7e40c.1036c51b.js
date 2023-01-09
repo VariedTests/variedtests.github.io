@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[35951],{92728:a=>{a.exports=JSON.parse('{"label":"Xamarin.Forms","permalink":"/blog/tags/xamarin-forms","allTagsPath":"/blog/tags","count":1}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[8320],{59459:a=>{a.exports=JSON.parse('{"label":"react-basics","permalink":"/blog/tags/react-basics","allTagsPath":"/blog/tags","count":1}')}}]);

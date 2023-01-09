@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[12810],{1276:a=>{a.exports=JSON.parse('{"label":"react-admin","permalink":"/blog/tags/react-admin","allTagsPath":"/blog/tags","count":2}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[89117],{89990:t=>{t.exports=JSON.parse('{"label":"typescript-omit","permalink":"/blog/tags/typescript-omit","allTagsPath":"/blog/tags","count":1}')}}]);

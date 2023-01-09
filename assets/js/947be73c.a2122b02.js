@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[48541],{82546:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/invoice-generator","page":1,"postsPerPage":12,"totalPages":1,"totalCount":2,"blogDescription":"A Docusaurus powered blog!","blogTitle":"Blog"}')}}]);

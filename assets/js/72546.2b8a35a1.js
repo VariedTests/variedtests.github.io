@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[72546],{72546:e=>{e.exports=JSON.parse('{"filePath":"/home/runner/work/variedtests.github.io/variedtests.github.io/packages/remix/src/useParams.ts","description":"","displayName":"lastActionIndex","props":{},"generatedAt":1673292590265}')}}]);

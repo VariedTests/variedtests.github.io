@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[90695],{5135:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/react-bootstrap","page":1,"postsPerPage":12,"totalPages":1,"totalCount":2,"blogDescription":"A Docusaurus powered blog!","blogTitle":"Blog"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[20937],{20937:e=>{e.exports=JSON.parse('{"filePath":"/home/runner/work/variedtests.github.io/variedtests.github.io/packages/mantine/src/index.tsx","description":"","displayName":"useModalForm","props":{},"generatedAt":1673292587003}')}}]);

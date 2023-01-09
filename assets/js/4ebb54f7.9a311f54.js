@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[889],{34963:a=>{a.exports=JSON.parse('{"label":"navigate-component","permalink":"/blog/tags/navigate-component","allTagsPath":"/blog/tags","count":1}')}}]);
